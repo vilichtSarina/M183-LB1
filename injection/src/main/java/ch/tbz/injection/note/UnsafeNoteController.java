@@ -53,7 +53,7 @@ public class UnsafeNoteController {
         return ResponseEntity.ok(result);
     }
 
-    //    1. Make PathVariable an Integer
+//    1. Make PathVariable an Integer
 //    2. Change placeholder in String.format to %d (int)
 //    3. Id should be unique: only return 1
     @GetMapping("/safer/id/{id}")
@@ -118,7 +118,7 @@ public class UnsafeNoteController {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private List<Object> unsafeResult(String query, List<Object> notes) throws SQLException {
-        log.info("QUERY: " + query);
+        log.info("QUERY: \n\n" + query);
         Connection connection = dataSource.getConnection();
         ResultSet set = connection.createStatement().executeQuery(query);
 
@@ -133,7 +133,7 @@ public class UnsafeNoteController {
     }
 
     private List<Note> saferResult(String query, List<Note> notes) throws SQLException {
-        log.info("QUERY: " + query);
+        log.info("QUERY: \n\n" + query);
         Connection connection = dataSource.getConnection();
         ResultSet set = connection.createStatement().executeQuery(query);
 
@@ -148,7 +148,7 @@ public class UnsafeNoteController {
     }
 
     private List<User> saferUser(String query, List<User> users) throws SQLException {
-        log.info("QUERY: " + query);
+        log.info("QUERY: \n\n" + query);
         Connection connection = dataSource.getConnection();
         ResultSet set = connection.createStatement().executeQuery(query);
 
